@@ -151,6 +151,7 @@ const KYC = () => {
       
       // Call the Flask API endpoint to start KYC process using the flaskApi interceptor
       const response = await livenessAPI.startKYC(user.id);
+      console.log(response)
       
       if (response.data.success) {
         // Proceed directly with verification

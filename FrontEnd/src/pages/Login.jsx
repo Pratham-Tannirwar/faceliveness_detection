@@ -62,11 +62,11 @@ const Login = () => {
         if (response.success) {
           // Create user data object for context
           const userData = {
-            id: response.user.id,
-            fullName: response.user.fullname,
-            email: response.user.email,
-            mobile_number: response.user.mobile_number,
-            token: response.access_token, // Use access_token from response
+            id: response.userId,
+            fullName: response.fullname,
+            email: response.email,
+            mobile_number: response.mobile_number,
+            token: response.token, // Use access_token from response
             // Add other fields as needed
           };
 

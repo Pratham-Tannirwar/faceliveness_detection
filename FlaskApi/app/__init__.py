@@ -6,6 +6,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 # Initialize extensions
 db = SQLAlchemy()
@@ -15,6 +16,7 @@ jwt = JWTManager()
 def create_app(config_class=None):
     """Application factory"""
     app = Flask(__name__)
+    CORS(app)
     
     # Load configuration
     if config_class:

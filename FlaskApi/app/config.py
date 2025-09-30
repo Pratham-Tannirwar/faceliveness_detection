@@ -33,12 +33,7 @@ class Config:
     JWT_HEADER_TYPE = 'Bearer'
     
     # CORS settings
-    CORS_ORIGINS = [
-        "http://localhost:3001",
-        "http://localhost:8000",
-        "http://127.0.0.1:3001",
-        "http://127.0.0.1:8000"
-    ]
+    CORS_ORIGINS = ["*"]
     
     # File upload settings
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
