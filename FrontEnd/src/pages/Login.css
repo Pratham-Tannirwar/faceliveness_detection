@@ -1,0 +1,319 @@
+/* Login Page Styles - Canara Bank Theme */
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(30,60,114,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  opacity: 0.3;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border: 1px solid #e8e8e8;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* Header Section */
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.login-subtitle {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.login-form {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: #1e3c72;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #333;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1e3c72;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.form-input.error {
+  border-color: #e74c3c;
+  background: #fdf2f2;
+}
+
+.form-input.error:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Forgot Password */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.forgot-link {
+  color: #1e3c72;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #2a5298;
+  text-decoration: underline;
+}
+
+/* Login Button - Canara Bank Yellow */
+.login-button {
+  width: 100%;
+  background: linear-gradient(135deg, #ffcc00 0%, #ffb347 100%);
+  color: #1e3c72;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.login-button:hover::before {
+  left: 100%;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 204, 0, 0.4);
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc00 100%);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+}
+
+/* Signup Section */
+.signup-section {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.signup-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.signup-link {
+  color: #1e3c72;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #2a5298;
+  text-decoration: underline;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.security-note {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-card {
+    padding: 30px 25px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .form-input {
+    padding: 14px 18px;
+  }
+
+  .login-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-page {
+    padding: 10px;
+  }
+
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .login-title {
+    font-size: 1.6rem;
+  }
+
+  .form-input {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Focus states for accessibility */
+.form-input:focus {
+  outline: 2px solid #1e3c72;
+  outline-offset: 2px;
+}
+
+.login-button:focus {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
+}
+
+/* Loading state for button */
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-button:disabled:hover {
+  transform: none;
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+}

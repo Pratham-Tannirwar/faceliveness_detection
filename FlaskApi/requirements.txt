@@ -1,0 +1,54 @@
+# Flask Core
+Flask>=2.2.0
+Flask-CORS>=4.0.0
+Flask-SQLAlchemy>=3.0.0
+Flask-Migrate>=4.0.0
+Flask-JWT-Extended>=4.5.0
+
+# Database
+psycopg2-binary>=2.9.0
+SQLAlchemy>=2.0.0
+
+# API Documentation
+Flask-RESTx>=1.1.0
+flask-restful>=0.3.10
+
+# Validation & Serialization
+marshmallow>=3.20.0
+Flask-Marshmallow>=0.15.0
+
+# Security
+bcrypt>=4.0.0
+cryptography>=41.0.0
+
+# Computer Vision & AI
+opencv-python>=4.8.0
+numpy>=1.24.0
+torch>=2.0.0
+torchvision>=0.15.0
+mediapipe>=0.10.5
+insightface>=0.7.0
+dlib>=19.24.0
+imutils>=0.5.0
+scipy>=1.11.0
+
+# Audio Processing
+vosk>=0.3.40
+sounddevice>=0.4.0
+word2number>=1.1
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+Pillow==10.0.0
+
+# Development
+pytest==7.4.2
+pytest-flask==1.2.0
+black==23.7.0
+flake8==6.0.0
+
+# Production
+gunicorn==21.2.0
+redis==4.6.0
+celery==5.3.1

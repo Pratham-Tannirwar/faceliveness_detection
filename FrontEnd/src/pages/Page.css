@@ -1,0 +1,70 @@
+.page {
+  padding: 40px 20px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.page h1 {
+  color: #1e3c72;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.page p {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 20px 15px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .page-container {
+    padding: 30px 20px;
+  }
+
+  .page h1 {
+    font-size: 2rem;
+  }
+
+  .page p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page {
+    padding: 15px 10px;
+    min-height: calc(100vh - 55px);
+  }
+
+  .page-container {
+    padding: 25px 15px;
+  }
+
+  .page h1 {
+    font-size: 1.8rem;
+  }
+
+  .page p {
+    font-size: 1rem;
+  }
+}

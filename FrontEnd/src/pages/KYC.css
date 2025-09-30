@@ -1,0 +1,1119 @@
+/* KYC Page Styles - Canara Bank Theme */
+
+.kyc-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+/* Instruction Modal Styles */
+.instruction-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.instruction-modal {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Responsive styles for the modal */
+@media (max-width: 768px) {
+  .instruction-modal {
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .instruction-modal-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .instruction-modal-content p,
+  .instruction-modal-content li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction-modal-header {
+    padding: 15px 20px;
+  }
+  
+  .instruction-modal-content {
+    padding: 20px;
+  }
+  
+  .instruction-modal-footer {
+    padding: 15px 20px;
+  }
+  
+  .start-kyc-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.instruction-modal-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 20px 30px;
+  position: relative;
+}
+
+.instruction-modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ffd700 100%);
+}
+
+.instruction-modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.instruction-modal-content {
+  padding: 30px;
+  color: #333;
+}
+
+.instruction-modal-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.instruction-modal-content ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.instruction-modal-content li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+.instruction-modal-footer {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.start-kyc-button {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle pulse effect to highlight the start button */
+.start-kyc-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.start-kyc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.5);
+  background: linear-gradient(135deg, #ff5a1f 0%, #ff7b2d 100%);
+}
+
+.start-kyc-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.4);
+}
+
+.start-kyc-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Loading Spinner */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.kyc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header Section */
+.kyc-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 30px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.kyc-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ffd700 100%);
+}
+
+.kyc-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.kyc-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Main Content */
+.kyc-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  min-height: 600px;
+}
+
+/* Webcam Section */
+.webcam-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.webcam-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+
+.webcam-feed {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+.webcam-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.status-indicator {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.status-indicator.verifying {
+  background: rgba(255, 193, 7, 0.9);
+  color: #1e3c72;
+  border-color: #ffc107;
+}
+
+.status-indicator.captcha {
+  background: rgba(255, 107, 53, 0.9);
+  color: white;
+  border-color: #ff6b35;
+}
+
+.status-indicator.recording {
+  background: rgba(220, 53, 69, 0.9);
+  color: white;
+  border-color: #dc3545;
+  animation: pulse 1.5s infinite;
+}
+
+.status-indicator.completed {
+  background: rgba(40, 167, 69, 0.9);
+  color: white;
+  border-color: #28a745;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Webcam Controls */
+.webcam-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.verify-button {
+  background: linear-gradient(135deg, #ffcc00 0%, #ffb347 100%);
+  color: #1e3c72;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.verify-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.verify-button:hover::before {
+  left: 100%;
+}
+
+.verify-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 204, 0, 0.4);
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc00 100%);
+}
+
+.verify-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.stop-recording-button {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stop-recording-button:hover {
+  background: linear-gradient(135deg, #c82333 0%, #dc3545 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* Response Section */
+.response-section {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid #e8e8e8;
+}
+
+.response-section h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Captcha Container */
+.captcha-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #ff6b35;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+.captcha-container h4 {
+  color: #1e3c72;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.captcha-box {
+  text-align: center;
+}
+
+.captcha-box p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e3c72;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #1e3c72;
+}
+
+.captcha-solved-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.captcha-solved-btn:hover {
+  background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* API Response */
+.api-response {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+.api-response h4 {
+  color: #1e3c72;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.response-json {
+  background: #f8f9fa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #333;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Error Message */
+.error-message {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #ff3333;
+  background-color: #ffeeee;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message h4 {
+  color: #721c24;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.error-message p {
+  color: #721c24;
+  margin: 0;
+}
+
+/* Progress Section */
+.progress-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+.progress-section h4 {
+  color: #1e3c72;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 2px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border-color: #1e3c72;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1e3c72;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.step.active .step-number {
+  background: white;
+  color: #1e3c72;
+}
+
+.step-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Result Modal */
+.result-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.result-modal-content {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.result-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.result-body {
+  padding: 30px;
+  text-align: center;
+}
+
+.result-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.result-body h3 {
+  color: #1e3c72;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.result-body p {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.result-footer {
+  padding: 20px 30px;
+  background: #f8f9fa;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.result-ok-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-ok-button:hover {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .kyc-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .webcam-feed {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kyc-page {
+    padding: 10px;
+  }
+
+  .kyc-header {
+    padding: 25px 30px;
+  }
+
+  .kyc-header h1 {
+    font-size: 2rem;
+  }
+
+  .kyc-content {
+    padding: 20px;
+  }
+
+  .webcam-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .verify-button, .stop-recording-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .response-section {
+    padding: 20px;
+  }
+
+  .progress-steps {
+    gap: 10px;
+  }
+
+  .step {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .kyc-header {
+    padding: 20px 25px;
+  }
+
+  .kyc-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .kyc-content {
+    padding: 15px;
+  }
+
+  .webcam-container {
+    border-radius: 10px;
+  }
+
+  .webcam-feed {
+    border-radius: 10px;
+  }
+
+  .response-section {
+    padding: 15px;
+  }
+
+  .result-modal-content {
+    margin: 10px;
+  }
+
+  .result-body {
+    padding: 20px;
+  }
+
+  .result-icon {
+    font-size: 3rem;
+  }
+}
+
+/* OTP Modal */
+.otp-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.otp-modal-content {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.otp-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.otp-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.otp-body {
+  padding: 30px;
+}
+
+/* OTP Verification Section */
+.otp-verification {
+  text-align: center;
+}
+
+.otp-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.otp-verification h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.otp-verification p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.otp-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.otp-input {
+  width: 200px;
+  padding: 15px 20px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: #1e3c72;
+  box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.verify-otp-btn {
+  background: linear-gradient(135deg, #ffcc00 0%, #ffb347 100%);
+  color: #1e3c72;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.verify-otp-btn:hover {
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3);
+}
+
+.verify-otp-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* KYC Instructions Section */
+.kyc-instructions {
+  text-align: center;
+}
+
+.instructions-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.kyc-instructions h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.instructions-list {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #1e3c72;
+}
+
+.instruction-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1e3c72;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.instruction-text {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.agreement-section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.agreement-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.agreement-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.agreement-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #1e3c72;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agreement-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: #1e3c72;
+  border-color: #1e3c72;
+}
+
+.agreement-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* OTP Footer */
+.otp-footer {
+  padding: 20px 30px;
+  background: #f8f9fa;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.otp-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.otp-help-text {
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.otp-verified-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.proceed-btn {
+  background: linear-gradient(135deg, #ff9800 0%, #ff7800 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.proceed-btn:hover {
+  background: linear-gradient(135deg, #ff7800 0%, #ff9800 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+.cancel-otp-btn, .resend-otp-btn {
+  background: transparent;
+  color: #0066b3;
+  border: 1px solid #0066b3;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.cancel-otp-btn:hover, .resend-otp-btn:hover {
+  background: #e6f0fa;
+  transform: translateY(-2px);
+}
+
+.resend-otp-btn:disabled {
+  color: #999;
+  border-color: #ddd;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.instruction-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.start-verification-btn {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.start-verification-btn:hover {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+}
+
+/* Updated Status Indicator */
+.status-indicator.verifying {
+  background: rgba(30, 60, 114, 0.9);
+  color: white;
+  border-color: #1e3c72;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 15px 25px;
+}
+
+/* Focus states for accessibility */
+.verify-button:focus,
+.stop-recording-button:focus,
+.captcha-solved-btn:focus,
+.result-ok-button:focus,
+.verify-otp-btn:focus,
+.start-verification-btn:focus {
+  outline: 2px solid #1e3c72;
+  outline-offset: 2px;
+}

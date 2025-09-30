@@ -1,0 +1,475 @@
+/* Navbar Styles - Canara Bank Theme */
+.navbar {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #ff6b35;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
+  border: 2px solid #ff6b35;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.logo-text:hover::before {
+  left: 100%;
+}
+
+.logo-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 60, 114, 0.4);
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 20px;
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #ff6b35;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+  width: 80%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger {
+  width: 25px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border-top: 3px solid #ff6b35;
+  }
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    margin: 5px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-container {
+    padding: 0 10px;
+    height: 55px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+}
+
+/* Professional Bank Website Styling */
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Profile Section */
+.profile-section {
+  position: relative;
+  margin-left: 20px;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profile-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.profile-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35 0%, #ffd700 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.profile-name {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  color: white;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e8e8e8;
+  min-width: 280px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownSlide 0.3s ease-out;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-info {
+  padding: 20px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.profile-email {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.profile-account {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-family: 'Courier New', monospace;
+}
+
+.profile-actions {
+  padding: 10px 0;
+}
+
+.profile-action-link {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-action-link:hover {
+  background: #f8f9fa;
+  color: #1e3c72;
+  transform: translateX(5px);
+}
+
+.logout-link {
+  color: #dc3545 !important;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 5px;
+}
+
+.logout-link:hover {
+  background: #f8d7da !important;
+  color: #721c24 !important;
+}
+
+/* Mobile Profile Section */
+@media screen and (max-width: 768px) {
+  .profile-section {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .profile-icon {
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .profile-dropdown {
+    position: static;
+    margin-top: 10px;
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .profile-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .profile-email,
+  .profile-account {
+    color: white;
+  }
+
+  .profile-action-link {
+    color: white;
+  }
+
+  .profile-action-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .logout-link {
+    color: #ff6b35 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .logout-link:hover {
+    background: rgba(255, 107, 53, 0.2) !important;
+    color: #ff6b35 !important;
+  }
+}
+
+/* Focus states for accessibility */
+.nav-link:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+.logo-text:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+.profile-icon:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
